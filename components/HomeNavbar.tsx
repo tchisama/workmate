@@ -20,9 +20,13 @@ function HomeNavbar({}: Props) {
 
 const styles = StyleSheet.create({
     container: {
+        zIndex:4,
         padding: 20,
         marginTop: 30,
         gap: 10,
+        position: 'absolute',
+        top: 0,
+        left:0,
         flexDirection: 'row',
     },
     nav: {

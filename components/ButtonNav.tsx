@@ -1,4 +1,4 @@
-import { View, Text ,StyleSheet} from 'react-native'
+import { View, Text ,StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import { theme } from '../constants/Colors'
@@ -10,21 +10,31 @@ const ButtonNav = (props: Props) => {
   return (
     <View style={style.container}>
         <View style={style.nav}>
-            <Link href={"/"} style={style.navElement}>
-                <Ionicons name="planet-outline" size={22}  color={theme.light.background}/>
+            <Link href={"/"} style={style.navElement} asChild>
+                <TouchableOpacity>
+                    <Ionicons name="planet-outline" size={22}  color={theme.light.background}/>
+                </TouchableOpacity>
             </Link>
-            <Link href={"/"} style={style.navElement}>
-                <Ionicons name="search-outline" size={22}  color={theme.light.background}/>
+            <Link href={"/"} style={style.navElement} asChild>
+                <TouchableOpacity>
+                    <Ionicons name="search-outline" size={22}  color={theme.light.background}/>
+                </TouchableOpacity>
             </Link>
-            <Link href={"/"} style={style.navElement}>
-                <Ionicons name="chatbubble-outline" size={22}  color={theme.light.background}/>
+            <Link href={"/"} style={style.navElement} asChild>
+                <TouchableOpacity>
+                    <Ionicons name="chatbubble-outline" size={22}  color={theme.light.background}/>
+                </TouchableOpacity>
             </Link>
-            <Link href={"/"} style={style.navElement}>
-                <Ionicons name="settings-outline" size={22}  color={theme.light.background}/>
+            <Link href={"/"} style={style.navElement} asChild>
+                <TouchableOpacity>
+                    <Ionicons name="person-outline" size={22}  color={theme.light.background}/>
+                </TouchableOpacity>
             </Link>
         </View>
-        <Link href={"/"} style={style.button}>
-            <Ionicons name="person-outline" size={22}  color={theme.light.background}/>
+        <Link href={"/"} style={style.button} asChild>
+            <TouchableOpacity>
+                <Ionicons name="add-outline" size={28}  color={theme.light.background}/>
+            </TouchableOpacity>
         </Link>
 
     </View>
@@ -38,11 +48,17 @@ const style = StyleSheet.create({
         paddingHorizontal: 20,
         position: 'absolute',
         bottom: 20,
+        alignContent: 'center',
     },
     button:{
         backgroundColor:theme.light.primery,
-        padding: 18,
-        borderRadius:30
+        padding: 15,
+        borderRadius:30,
+        justifyContent:"center",
+        alignItems:"center",
+
+        shadowColor: '#7c3aed',
+        elevation: 12,
     },
     nav:{
         flexDirection: 'row',
@@ -52,6 +68,10 @@ const style = StyleSheet.create({
         borderRadius:30,
         justifyContent:"space-around",
         alignItems:"center",
+
+        // i want a small box shadow
+        shadowColor: '#000',
+        elevation: 12,
     },
     navElement:{
         justifyContent:"center",

@@ -8,7 +8,7 @@ export const theme  =  {
     tint: tintColorLight,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
-    primery: '#f0f',
+    primery: "#7c3aed",
   },
   dark: {
     text: '#fff',
