@@ -113,17 +113,6 @@ export const categories = [
         ]
     },
     {
-        "category": "Healthcare",
-        "emoji": "🏥",
-        "jobs": [
-            "Doctor",
-            "Nurse",
-            "Pharmacist",
-            "Physical Therapist",
-            "Medical Researcher"
-        ]
-    },
-    {
         "category": "Marketing and Advertising",
         "emoji": "📈",
         "jobs": [
