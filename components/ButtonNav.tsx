@@ -10,9 +10,9 @@ const ButtonNav = (props: Props) => {
   return (
     <View style={style.container}>
         <View style={style.nav}>
-            <Link href={"/"} style={style.navElement} asChild>
+            <Link href={"/"} style={{...style.navElement,backgroundColor:theme.light.primery+"66"}} asChild>
                 <TouchableOpacity>
-                    <Ionicons name="planet-outline" size={22}  color={theme.light.background}/>
+                    <Ionicons name="planet-outline" size={22}  color={theme.light.primerylight}/>
                 </TouchableOpacity>
             </Link>
             <Link href={"/"} style={style.navElement} asChild>
@@ -63,12 +63,13 @@ const style = StyleSheet.create({
     },
     nav:{
         flexDirection: 'row',
-        paddingHorizontal: 10,
+        paddingHorizontal: 5,
         backgroundColor:theme.light.text,
         flex: 1,
         borderRadius:30,
         justifyContent:"space-around",
         alignItems:"center",
+        padding: 4,
 
         // i want a small box shadow
         shadowColor: '#000',
@@ -77,7 +78,7 @@ const style = StyleSheet.create({
     navElement:{
         justifyContent:"center",
         alignItems:"center",
-        padding: 16,
+        padding: 10,
         borderRadius:30,
     }
 })

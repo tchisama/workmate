@@ -1,32 +1,55 @@
 import { StyleSheet,Image,Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import MapView , {Marker,Callout} from 'react-native-maps'
-import { mapStyling, theme } from '../constants/Colors'
-import MarkerComp from './MarkerComp'
-import { users } from '../constants/data'
+import { theme } from '../constants/Colors'
 
-type Props = {}
-
-const Map = (props: Props) => {
+type Props = {
+    user:{
+        name: string;
+        work: string;
+        sex: string;
+        age: number;
+        description: string;
+        isbusy: boolean;
+        img: string;
+        latitude: number;
+        longitude: number;
+    }
+}
+const MarkerComp = ({user}: Props) => {
+    const markerCoordinates = {
+        latitude: user.latitude,
+        longitude: user.longitude,
+      };
   return (
-    <MapView  
-        customMapStyle={mapStyling} 
-        style={styles.map} 
-        initialRegion={{
-            latitude: 32.359774892258095,
-            longitude: -6.391043775400629,
-            latitudeDelta: 0.8,
-            longitudeDelta: 0.8,
-        }} 
-        >
+    <Marker coordinate={markerCoordinates}>
+        <View style={styles.imageContainer}>
+            <Image
+            source={{uri:user.img}}
+            style={styles.meCustomMarker}
+            />
+        </View>
+        <Callout tooltip={false} style={styles.callout}>
+        <View >
+            <View style={{flexDirection:'row',justifyContent:"space-between",alignItems:"flex-start"}}>
+            <Text style={styles.name}>{user.name}</Text>
             {
-                users.map((user,index) => <MarkerComp key={index} user={user}/>)
+                !user.isbusy ?
+                <Text style={styles.badgFree}>Free</Text>
+                :
+                <Text style={styles.badgBusy}>Busy</Text>
             }
-    </MapView>
+            </View>
+            <Text style={{fontSize:12}}>{user.work}</Text>
+            <Text style={{fontSize:10}}>{user.sex}  •  {user.age} years</Text>
+            <Text style={{fontSize:10,marginTop:5, color:'gray'}}>{user.description}</Text>
+        </View>
+        </Callout>
+    </Marker>
   )
 }
 
-export default Map
+export default MarkerComp
 
 const styles = StyleSheet.create({
     name:{
