@@ -3,24 +3,30 @@ import React from 'react'
 import MapView , {Marker,Callout} from 'react-native-maps'
 import { mapStyling, theme } from '../constants/Colors'
 import MarkerComp from './MarkerComp'
-import { users } from '../constants/data'
+import { categories, users } from '../constants/data'
+import useCatStore from '../hooks/categories'
 
 type Props = {}
 
 const Map = (props: Props) => {
+  const {category}=useCatStore()
   return (
     <MapView  
         customMapStyle={mapStyling} 
         style={styles.map} 
+        // i want the map to be centered where user are
         initialRegion={{
-            latitude: 32.359774892258095,
-            longitude: -6.391043775400629,
-            latitudeDelta: 0.8,
-            longitudeDelta: 0.8,
-        }} 
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.1922,
+            longitudeDelta: 0.1421
+        }}
         >
             {
+                category==0?
                 users.map((user,index) => <MarkerComp key={index} user={user}/>)
+                :
+                users.filter(user => categories[category-1].jobs.includes(user.work)).map((user,index) => <MarkerComp key={user.description} user={user}/>)
             }
     </MapView>
   )

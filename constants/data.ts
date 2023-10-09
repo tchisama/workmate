@@ -2,92 +2,66 @@ export const users = [
     {
         "name": "Alice Johnson",
         "work": "Graphic Designer",
+        "category": "Creative Arts",
         "sex": "Female",
         "age": 29,
         "description": "Experienced graphic designer specializing in remote work.",
         "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/56143209?v=4",
+        "img": "https://randomuser.me/api/portraits/women/8.jpg",
         "latitude": 30.7128,
         "longitude": -84.0060
     },
     {
-        "name": "Robert Anderson",
-        "work": "Software Developer",
+        "name": "Bob Smith",
+        "work": "Software Engineer",
+        "category": "Information Technology (IT)",
         "sex": "Male",
         "age": 32,
-        "description": "Remote software developer with expertise in web applications.",
+        "description": "Passionate software engineer with expertise in remote development.",
         "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/239739?v=4",
-        "latitude": 30.7749,
-        "longitude": -102.4194
-    },
-    {
-        "name": "Grace Mitchell",
-        "work": "Digital Marketer",
-        "sex": "Female",
-        "age": 28,
-        "description": "Remote digital marketer specializing in SEO and content strategy.",
-        "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/9150073?v=4",
-        "latitude": 44.0522,
-        "longitude": -118.2437
-    },
-    {
-        "name": "Daniel White",
-        "work": "Writer",
-        "sex": "Male",
-        "age": 35,
-        "description": "Freelance writer with a passion for remote work opportunities.",
-        "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/444822?v=4",
-        "latitude": 51.8781,
-        "longitude": -87.6298
-    },
-    {
-        "name": "Ella Davis",
-        "work": "Virtual Assistant",
-        "sex": "Female",
-        "age": 26,
-        "description": "Virtual assistant experienced in remote administrative tasks.",
-        "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/9849129?v=4",
+        "img": "https://randomuser.me/api/portraits/men/1.jpg",
         "latitude": 40.7128,
         "longitude": -74.0060
     },
     {
-        "name": "James Clark",
-        "work": "Data Analyst",
-        "sex": "Male",
-        "age": 30,
-        "description": "Remote data analyst specializing in data visualization.",
-        "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/6686614?v=4",
-        "latitude": 37.7749,
-        "longitude": -122.4194
-    },
-    {
-        "name": "Sophia Baker",
-        "work": "Content Creator",
+        "name": "Carol Davis",
+        "work": "Digital Marketing Specialist",
+        "category": "Marketing",
         "sex": "Female",
         "age": 27,
-        "description": "Remote content creator with a focus on social media.",
+        "description": "Experienced digital marketer seeking remote opportunities.",
         "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/46248141?v=4",
+        "img": "https://randomuser.me/api/portraits/women/2.jpg",
         "latitude": 34.0522,
         "longitude": -118.2437
     },
     {
-        "name": "William Green",
-        "work": "Project Manager",
+        "name": "David Lee",
+        "work": "Online Tutor",
+        "category": "Education",
         "sex": "Male",
-        "age": 34,
-        "description": "Remote project manager with a track record of successful remote teams.",
+        "age": 35,
+        "description": "Dedicated online tutor with a passion for remote teaching.",
         "isbusy": false,
-        "img": "https://avatars.githubusercontent.com/u/21979?v=4",
-        "latitude": 41.8781,
-        "longitude": -87.6298
+        "img": "https://randomuser.me/api/portraits/men/3.jpg",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+    },
+    {
+        "name": "Eve Wilson",
+        "work": "Remote Customer Service Representative",
+        "category": "Customer Support",
+        "sex": "Female",
+        "age": 30,
+        "description": "Experienced customer service representative seeking remote opportunities.",
+        "isbusy": false,
+        "img": "https://randomuser.me/api/portraits/women/4.jpg",
+        "latitude": 38.8951,
+        "longitude": -77.0364
     }
-]
+    // You can continue adding more fake users based on the categories as needed...
+];
+
 
 export const categories = [
     {
@@ -95,10 +69,14 @@ export const categories = [
         "emoji": "💻",
         "jobs": [
             "Software Engineer",
+            "Software Developer",
             "Web Developer",
             "Data Scientist",
+            "Data Analyst",
             "Network Administrator",
-            "Cybersecurity Analyst"
+            "Cybersecurity Analyst",
+            "DevOps Engineer",
+            "UI/UX Designer"
         ]
     },
     {
@@ -109,29 +87,49 @@ export const categories = [
             "Illustrator",
             "Animator",
             "Photographer",
-            "Video Editor"
+            "Video Editor",
+            "UI Designer",
+            "Game Developer"
         ]
     },
     {
-        "category": "Marketing and Advertising",
+        "category": "Marketing",
         "emoji": "📈",
         "jobs": [
-            "Marketing Manager",
-            "Digital Marketer",
-            "Advertising Copywriter",
-            "Social Media Specialist",
-            "SEO Specialist"
+            "Digital Marketing Specialist",
+            "Content Marketing Manager",
+            "Social Media Manager",
+            "SEO Specialist",
+            "Email Marketing Specialist",
+            "Remote Marketing Coordinator",
+            "Affiliate Marketing Manager"
         ]
     },
     {
         "category": "Education",
         "emoji": "📚",
         "jobs": [
-            "Teacher",
-            "Professor",
-            "Tutor",
-            "School Counselor",
-            "Education Administrator"
+            "Online Tutor",
+            "Remote Curriculum Developer",
+            "E-Learning Specialist",
+            "Educational Content Writer",
+            "Virtual Teacher",
+            "Instructional Designer",
+            "Remote Education Consultant"
         ]
-    }
-]
+    },
+    {
+        "category": "Customer Support",
+        "emoji": "📞",
+        "jobs": [
+            "Remote Customer Service Representative",
+            "Technical Support Specialist",
+            "Helpdesk Analyst",
+            "Customer Success Manager",
+            "Live Chat Support Agent",
+            "Remote Call Center Supervisor",
+            "Customer Experience Analyst"
+        ]
+    },
+    // You can continue adding more categories and jobs as needed...
+];
