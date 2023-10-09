@@ -1,6 +1,7 @@
 import { StyleSheet,Image,Text, View } from 'react-native'
 import React from 'react'
 import MapView , {Marker} from 'react-native-maps'
+import { theme } from '../constants/Colors'
 
 type Props = {}
 
@@ -9,7 +10,7 @@ const mapStyling = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#f5f5f5"
+        "color": "#d9d9d9"
       }
     ]
   },
@@ -92,7 +93,7 @@ const mapStyling = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#eeeeee"
+        "color": "#ff0000"
       }
     ]
   },
@@ -101,7 +102,7 @@ const mapStyling = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#757575"
+        "color": "#00ff00"
       }
     ]
   },
@@ -128,7 +129,7 @@ const mapStyling = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#ffffff"
+        "color": "#888888"
       }
     ]
   },
@@ -146,7 +147,7 @@ const mapStyling = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#757575"
+        "color": "#888888"
       }
     ]
   },
@@ -229,9 +230,17 @@ const Map = (props: Props) => {
         longitude: -6.391043775400629,
       };
   return (
-    <MapView customMapStyle={mapStyling} style={styles.map} >
+    <MapView  customMapStyle={mapStyling} style={styles.map} >
         {/* add me a custom marker */}
         <Marker coordinate={markerCoordinates}>
+            <View style={styles.imageContainer}>
+                <Image
+                source={{uri:'https://avatars.githubusercontent.com/u/115560200?v=4'}}
+                style={styles.meCustomMarker}
+                />
+            </View>
+        </Marker>
+        <Marker coordinate={{latitude: 30.359774892258095, longitude: -6.492043775500639}}>
             <View style={styles.imageContainer}>
                 <Image
                 source={{uri:'https://avatars.githubusercontent.com/u/115560200?v=4'}}
@@ -250,24 +259,29 @@ const styles = StyleSheet.create({
   map:{
     flex: 1,
     backgroundColor: "#f3f4f6",    
+
   },
   imageContainer:{
     // i want a small box shadow
     shadowColor: '#3335',
     elevation: 4,
-    borderWidth:2,
-    borderColor:'white',
+
+    position:'relative',
     borderRadius:40,
     backgroundColor:'white',
   },
+  meCustomMarker:{
+    borderWidth:2,
+    borderColor:theme.light.primery+"88",
+    width: 32,
+    height: 32,
+    borderRadius:40,
+  },
   customMarker:{
-    width: 40,
-    height: 40,
     borderWidth:2,
     borderColor:'white',
-    
+    width: 30,
+    height: 30,
     borderRadius:40,
-
-
   }
 })

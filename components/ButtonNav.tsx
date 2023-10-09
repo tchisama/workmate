@@ -31,6 +31,7 @@ const ButtonNav = (props: Props) => {
                 </TouchableOpacity>
             </Link>
         </View>
+
         <Link href={"/"} style={style.button} asChild>
             <TouchableOpacity>
                 <Ionicons name="add-outline" size={28}  color={theme.light.background}/>
