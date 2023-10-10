@@ -1,4 +1,4 @@
-import create from 'zustand';
+import {create} from 'zustand';
 
 const useCatStore = create<{ category: number, setCategory: (cat: number) => void}>((set) => ({
   category: 0,

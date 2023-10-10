@@ -14,13 +14,6 @@ const Map = (props: Props) => {
     <MapView  
         customMapStyle={mapStyling} 
         style={styles.map} 
-        // i want the map to be centered where user are
-        initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.1922,
-            longitudeDelta: 0.1421
-        }}
         >
             {
                 category==0?
@@ -37,7 +30,6 @@ export default Map
 const styles = StyleSheet.create({
     name:{
         fontSize:18,
-
     },
     bage:{
         padding:2,
